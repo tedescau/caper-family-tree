@@ -1,0 +1,960 @@
+{
+  "$schema": "momofuku-family-tree-v1",
+  "metadata": {
+    "title": "Momofuku Restaurant Family Tree & Alumni Network",
+    "description": "Comprehensive dataset mapping Momofuku corporate structure, alumni ventures, and related businesses for interactive visualization",
+    "prepared_for": "Caper Media",
+    "last_updated": "2026-02-26",
+    "confidence_notes": "Dates and details sourced from press coverage, Wikipedia, Yelp, Michelin Guide, and official sites. Items marked [NEEDS VERIFICATION] require additional confirmation."
+  },
+
+  "relationship_types": [
+    {
+      "id": "worked_at",
+      "label": "Worked at Momofuku",
+      "visual": "solid_line",
+      "description": "Employment or leadership role within Momofuku group"
+    },
+    {
+      "id": "opened_own",
+      "label": "Opened own restaurant/business",
+      "visual": "dashed_line",
+      "description": "Alumni who launched independent ventures after Momofuku"
+    },
+    {
+      "id": "family_connection",
+      "label": "Family connection",
+      "visual": "wavy_line",
+      "description": "Family or dynastic ties (e.g., Zabar family)"
+    },
+    {
+      "id": "spinoff",
+      "label": "Spinoff / subsidiary",
+      "visual": "double_line",
+      "description": "Business that grew out of Momofuku but became semi-independent"
+    },
+    {
+      "id": "same_space",
+      "label": "Occupies former Momofuku space",
+      "visual": "dotted_line",
+      "description": "Restaurant that took over a physical Momofuku location"
+    },
+    {
+      "id": "business_partner",
+      "label": "Business partnership",
+      "visual": "thick_line",
+      "description": "Ongoing financial or operational partnership"
+    },
+    {
+      "id": "mentorship",
+      "label": "Mentorship / influence",
+      "visual": "thin_dashed",
+      "description": "Formative career influence without direct co-ownership"
+    }
+  ],
+
+  "organizations": {
+    "momofuku_group": {
+      "id": "momofuku_group",
+      "name": "Momofuku",
+      "type": "parent_company",
+      "founded": 2004,
+      "founder": "david_chang",
+      "current_ceo": "marguerite_zabar_mariscal",
+      "headquarters": "New York, NY",
+      "employees_approx": 475,
+      "revenue_approx": "$100M+ (2023, restaurants + goods combined)",
+      "notes": "Named after Momofuku Ando, inventor of instant ramen"
+    },
+
+    "momofuku_goods": {
+      "id": "momofuku_goods",
+      "name": "Momofuku Goods",
+      "type": "cpg_division",
+      "parent": "momofuku_group",
+      "ceo": "paddy_spence",
+      "board_member": "marguerite_zabar_mariscal",
+      "founded_approx": 2020,
+      "revenue_2024": "$67M",
+      "retail_locations": 11000,
+      "funding": [
+        {
+          "amount": "$17.5M",
+          "investors": ["Alliance Consumer Growth"],
+          "year": 2023,
+          "notes": "Announced March 2023"
+        },
+        {
+          "amount": "$27.5M total",
+          "investors": ["Siddhi Capital", "Alliance Consumer Growth"],
+          "year": 2023,
+          "notes": "Total funding round"
+        }
+      ],
+      "products": [
+        "Chili Crunch (Original, Extra Spicy, Honey)",
+        "Seasoned Salts (Savory, Spicy, Tingly)",
+        "Air-Dried Noodles",
+        "Soy Sauce",
+        "Tamari"
+      ],
+      "notes": "Semi-independent division with dedicated CEO as of Feb 2025. Marguerite Mariscal is co-founder and board member."
+    },
+
+    "milk_bar": {
+      "id": "milk_bar",
+      "name": "Milk Bar",
+      "type": "spinoff_company",
+      "founder": "christina_tosi",
+      "original_connection": "momofuku_group",
+      "founded": "2008-11-15",
+      "status": "active_independent",
+      "notes": "Started as Momofuku Milk Bar in space next to Ssam Bar. Dropped 'Momofuku' from name by 2012. David Chang remains a business partner. Received $10M from RSE Ventures in 2017. Multiple locations nationwide."
+    },
+
+    "majordomo_media": {
+      "id": "majordomo_media",
+      "name": "Majordomo Media",
+      "type": "media_company",
+      "founder": "david_chang",
+      "co_founders": ["Christopher Chen", "Scott Dadich"],
+      "founded": 2018,
+      "properties": [
+        "The Dave Chang Show (podcast)",
+        "Ugly Delicious (Netflix)",
+        "Dinner Time Live with David Chang (Netflix)",
+        "Editorial platform"
+      ],
+      "notes": "Multimedia platform for food and culture content. Shares name with LA restaurant Majordomo."
+    },
+
+    "care_of_chan": {
+      "id": "care_of_chan",
+      "name": "Care of Chan",
+      "type": "events_agency",
+      "founder": "sue_chan",
+      "founded": 2016,
+      "current_focus": "Hospitality-forward experiential agency",
+      "connection": "Sue Chan was Momofuku's first brand director",
+      "notes": "Started as culinary PR & talent management agency. Pivoted to experiential productions in 2022. Works with culinary, film, fashion, art, and design brands."
+    },
+
+    "fuku": {
+      "id": "fuku",
+      "name": "Fuku",
+      "type": "fast_casual_chain",
+      "parent": "momofuku_group",
+      "founded": 2015,
+      "concept": "Fried chicken sandwiches",
+      "status": "partially_active",
+      "notes": "Original East Village location closed. Now operates via Neighborhood Kitchens (delivery-only) in NYC, Miami/Fort Lauderdale, and Arlington/DC areas."
+    }
+  },
+
+  "restaurants": [
+    {
+      "id": "noodle_bar_ev",
+      "name": "Momofuku Noodle Bar (East Village)",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "address": "171 First Avenue",
+      "neighborhood": "East Village",
+      "opened": "2004",
+      "closed": null,
+      "status": "active",
+      "cuisine": "Ramen / Asian-American",
+      "accolades": ["Michelin Bib Gourmand"],
+      "notes": "The original. Flagship restaurant that launched the empire. Temporarily hosted Fuku in 2015."
+    },
+    {
+      "id": "noodle_bar_uptown",
+      "name": "Momofuku Noodle Bar (Uptown)",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "Columbus Circle",
+      "opened": "2017",
+      "closed": null,
+      "status": "active",
+      "cuisine": "Ramen / Asian-American",
+      "notes": "Uptown outpost at The Shops at Columbus Circle [NEEDS VERIFICATION on exact opening date]"
+    },
+    {
+      "id": "ssam_bar",
+      "name": "Momofuku Ssam Bar",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "South Street Seaport (final location)",
+      "opened": "2006-08",
+      "closed": "2023-09-30",
+      "status": "closed",
+      "cuisine": "Korean-American",
+      "accolades": ["Michelin Star (at various points)"],
+      "notes": "Originally opened on Second Avenue in East Village. Moved to South Street Seaport in 2019. Closed September 30, 2023."
+    },
+    {
+      "id": "ko",
+      "name": "Momofuku Ko",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "East Village (original), Extra Place",
+      "opened": "2008-03",
+      "closed": "2023-11-04",
+      "status": "closed",
+      "cuisine": "Tasting menu / New American",
+      "seats": 12,
+      "accolades": ["2 Michelin Stars"],
+      "notable_chefs": ["peter_serpico", "sean_gray", "joshua_pinsky"],
+      "notable_staff": ["chase_sinzer", "nikita_malhotra", "nick_tamburo", "theo_ouya"],
+      "notes": "Arguably the most influential fine dining restaurant of its generation. Counter-service tasting menu format. Opening chef de cuisine was Peter Serpico; Sean Gray served as exec chef for nearly 15 years."
+    },
+    {
+      "id": "ma_peche",
+      "name": "Momofuku Ma Peche",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "Midtown (Chambers Hotel)",
+      "opened": "2010",
+      "closed": "2018",
+      "status": "closed",
+      "cuisine": "French-Vietnamese",
+      "notable_chefs": ["tien_ho", "paul_carmichael"],
+      "notes": "Located in Chambers Hotel. Closed due to lease challenges."
+    },
+    {
+      "id": "seiobo",
+      "name": "Momofuku Seiobo",
+      "parent": "momofuku_group",
+      "city": "Sydney, Australia",
+      "location": "The Star casino complex",
+      "opened": "2011",
+      "closed": "2021-06",
+      "status": "closed",
+      "cuisine": "Fine dining / Caribbean-influenced (under Carmichael)",
+      "notable_chefs": ["paul_carmichael"],
+      "notes": "First Momofuku outside New York. Paul Carmichael became exec chef in 2015, shifting cuisine to Caribbean-influenced. Closed due to pandemic restrictions."
+    },
+    {
+      "id": "toronto",
+      "name": "Momofuku Toronto",
+      "parent": "momofuku_group",
+      "city": "Toronto, Canada",
+      "opened": "2012",
+      "closed": "2022-12",
+      "status": "closed",
+      "cuisine": "Multiple concepts (Noodle Bar, Kojin, Daishō)",
+      "notes": "Multi-level complex including Noodle Bar Toronto, Kojin, and Daishō. Closed after lease expiration in December 2022."
+    },
+    {
+      "id": "nishi",
+      "name": "Momofuku Nishi",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "Chelsea",
+      "opened": "2016-01",
+      "closed": "2020",
+      "status": "closed",
+      "cuisine": "Italian-Korean fusion",
+      "notes": "First Momofuku on the west side of Manhattan. Closed during COVID-19 pandemic."
+    },
+    {
+      "id": "ccdc",
+      "name": "Momofuku CCDC",
+      "parent": "momofuku_group",
+      "city": "Washington, DC",
+      "neighborhood": "City Center",
+      "opened": "2015-10-23",
+      "closed": "2020-05",
+      "status": "closed",
+      "cuisine": "Pan-Asian",
+      "notes": "Permanently closed during COVID-19 pandemic. Only DC-area Momofuku location."
+    },
+    {
+      "id": "majordomo_la",
+      "name": "Majordomo",
+      "parent": "momofuku_group",
+      "city": "Los Angeles",
+      "neighborhood": "Chinatown",
+      "opened": "2018-01",
+      "closed": null,
+      "status": "active",
+      "cuisine": "Korean-American / Wood-fired",
+      "notes": "David Chang's LA flagship. Shares name with Majordomo Media."
+    },
+    {
+      "id": "kawi",
+      "name": "Momofuku Kawi",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "Hudson Yards",
+      "opened": "2019-03",
+      "closed": "2021",
+      "status": "closed",
+      "cuisine": "Modern Korean",
+      "notable_chefs": ["Eunjo Park"],
+      "notes": "Located at 20 Hudson Yards. Closed during pandemic, did not reopen."
+    },
+    {
+      "id": "majordomo_meat_fish",
+      "name": "Majordomo Meat & Fish",
+      "parent": "momofuku_group",
+      "city": "Las Vegas",
+      "location": "The Venetian / Palazzo",
+      "opened": "2021",
+      "closed": "2022",
+      "status": "closed",
+      "cuisine": "Steakhouse / Seafood",
+      "notes": "[NEEDS VERIFICATION on exact dates]"
+    },
+    {
+      "id": "moon_palace",
+      "name": "Moon Palace",
+      "parent": "momofuku_group",
+      "city": "Las Vegas",
+      "location": "The Venetian / Palazzo",
+      "opened": "2021",
+      "closed": "2022-06-06",
+      "status": "closed",
+      "cuisine": "Fast casual burgers",
+      "notes": "Casual burger concept. 'Tastys' = griddled patties on King's Hawaiian rolls."
+    },
+    {
+      "id": "momofuku_lv",
+      "name": "Momofuku Las Vegas",
+      "parent": "momofuku_group",
+      "city": "Las Vegas",
+      "location": "The Cosmopolitan (later moved)",
+      "opened": "2017",
+      "closed": null,
+      "status": "active",
+      "cuisine": "Asian-American",
+      "notes": "[NEEDS VERIFICATION on current status and exact location]"
+    },
+    {
+      "id": "kabawa",
+      "name": "Kabawa",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "East Village",
+      "opened": "2024",
+      "closed": null,
+      "status": "active",
+      "cuisine": "Caribbean-inspired",
+      "executive_chef": "paul_carmichael",
+      "notes": "Caribbean-inspired restaurant led by Paul Carmichael. [NEEDS VERIFICATION on exact opening date]"
+    },
+    {
+      "id": "bar_kabawa",
+      "name": "Bar Kabawa",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "East Village",
+      "opened": "2024",
+      "closed": null,
+      "status": "active",
+      "cuisine": "Bar / Caribbean cocktails",
+      "notes": "Attached to Kabawa. [NEEDS VERIFICATION on exact opening date]"
+    },
+    {
+      "id": "bang_bar_ny",
+      "name": "Bang Bar (New York)",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "opened": null,
+      "closed": null,
+      "status": "active",
+      "cuisine": "Fast casual",
+      "notes": "[NEEDS VERIFICATION on opening date and current status]"
+    },
+    {
+      "id": "peach_mart",
+      "name": "Peach Mart",
+      "parent": "momofuku_group",
+      "city": "New York",
+      "neighborhood": "Hudson Yards",
+      "opened": "2019",
+      "closed": "2021",
+      "status": "closed",
+      "cuisine": "Convenience store / snacks",
+      "notes": "Closed alongside Kawi at Hudson Yards."
+    }
+  ],
+
+  "people": [
+    {
+      "id": "david_chang",
+      "name": "David Chang",
+      "role": "Founder",
+      "type": "leadership",
+      "current_title": "Founder & Creative Guide",
+      "based_in": "Los Angeles",
+      "connections": [
+        { "to": "momofuku_group", "type": "worked_at", "role": "Founder", "years": "2004-present" },
+        { "to": "majordomo_media", "type": "opened_own", "role": "Co-founder", "year": 2018 },
+        { "to": "milk_bar", "type": "business_partner", "notes": "Remains a business partner" }
+      ],
+      "media": ["Ugly Delicious (Netflix)", "Dinner Time Live (Netflix)", "The Dave Chang Show (podcast)", "Momofuku: A Cookbook (2009)", "Eat a Peach (memoir, 2020)"],
+      "notes": "Has moved from day-to-day operations to creative/media role. Lives in LA."
+    },
+    {
+      "id": "marguerite_zabar_mariscal",
+      "name": "Marguerite Zabar Mariscal",
+      "role": "CEO, Momofuku Restaurants",
+      "type": "leadership",
+      "appointed_ceo": 2019,
+      "age_at_appointment": 26,
+      "career_at_momofuku": [
+        { "role": "Press Intern", "year": 2011 },
+        { "role": "Social Media Manager", "year_approx": 2012 },
+        { "role": "VP of Brand and Design", "year_approx": 2015 },
+        { "role": "Chief of Staff & Creative Director", "year_approx": 2017 },
+        { "role": "CEO", "year": 2019 }
+      ],
+      "connections": [
+        { "to": "momofuku_group", "type": "worked_at", "role": "CEO", "years": "2011-present" },
+        { "to": "momofuku_goods", "type": "business_partner", "role": "Co-founder & Board Member" },
+        { "to": "zabars", "type": "family_connection", "relationship": "Great-granddaughter of Louis Zabar" }
+      ],
+      "family": {
+        "great_grandparents": "Louis and Lillian Zabar (founders of Zabar's)",
+        "grandfather": "Stanley Zabar (VP and co-owner of Zabar's)",
+        "grew_up": "Upper West Side, Manhattan"
+      },
+      "notes": "First-ever CEO of Momofuku. Transformed it from primarily restaurants into a $100M+ diversified food business."
+    },
+    {
+      "id": "paddy_spence",
+      "name": "Padraic 'Paddy' Spence",
+      "role": "CEO, Momofuku Goods",
+      "type": "leadership",
+      "appointed": "2025-02-26",
+      "previous_role": "CEO, Zevia",
+      "connections": [
+        { "to": "momofuku_goods", "type": "worked_at", "role": "CEO", "years": "2025-present" }
+      ],
+      "notes": "Led Zevia through IPO and expansion to 31,000+ retail locations before joining Momofuku Goods."
+    },
+    {
+      "id": "anoop_pillarisetti",
+      "name": "Anoop Pillarisetti",
+      "role": "Former VP of Technology, Momofuku",
+      "type": "alumni",
+      "momofuku_role": "VP of Technology",
+      "connections": [
+        { "to": "momofuku_group", "type": "worked_at", "role": "VP of Technology" },
+        { "to": "strange_delight", "type": "opened_own", "role": "Co-founder/Owner" }
+      ],
+      "current_ventures": [
+        {
+          "id": "strange_delight",
+          "name": "Strange Delight",
+          "city": "New York",
+          "neighborhood": "Fort Greene, Brooklyn",
+          "opened": "2024",
+          "cuisine": "New Orleans seafood & cocktails",
+          "co_founders": ["Ham El-Waylly (Empellon alum)", "Michael Tuiach (Shake Shack)"],
+          "notes": "Inspired by Pillarisetti's childhood in Alexandria, Louisiana"
+        }
+      ],
+      "notes": "Appeared on The Dave Chang Show podcast. Louisiana upbringing."
+    },
+    {
+      "id": "sue_chan",
+      "name": "Sue Chan",
+      "role": "Former Head of Marketing / First Brand Director",
+      "type": "alumni",
+      "momofuku_role": "First Brand Director (oversaw PR, marketing, partnerships, events, digital for David Chang and 10 Momofuku establishments across NYC, Sydney, Toronto)",
+      "connections": [
+        { "to": "momofuku_group", "type": "worked_at", "role": "Brand Director" },
+        { "to": "care_of_chan", "type": "opened_own", "role": "Founder & Chief Creative Officer" }
+      ],
+      "current_ventures": [
+        {
+          "name": "Care of Chan",
+          "founded": 2016,
+          "type": "Hospitality-forward experiential agency",
+          "notes": "Pivoted from culinary PR to experiential productions in 2022"
+        },
+        {
+          "name": "Toklas Society",
+          "type": "Organization for women in food and hospitality",
+          "city": "New York",
+          "notes": "[NEEDS VERIFICATION on her exact role]"
+        }
+      ],
+      "notes": "15-year food industry veteran. Built the David Chang brand machine."
+    },
+    {
+      "id": "christina_tosi",
+      "name": "Christina Tosi",
+      "role": "Founder, Milk Bar",
+      "type": "alumni",
+      "momofuku_role": "Pastry Chef (debuted cereal milk panna cotta on Ko's first tasting menu)",
+      "connections": [
+        { "to": "momofuku_group", "type": "worked_at", "role": "Pastry Chef", "years": "2006-2012" },
+        { "to": "milk_bar", "type": "opened_own", "role": "Founder & CEO" },
+        { "to": "david_chang", "type": "business_partner", "notes": "Chang remains a business partner" }
+      ],
+      "notes": "Dropped 'Momofuku' from Milk Bar name by 2012. MasterChef Junior judge. Multiple cookbooks. One of the most commercially successful Momofuku alumni."
+    },
+
+    {
+      "id": "chase_sinzer",
+      "name": "Chase Sinzer",
+      "role": "Former Wine Director, Momofuku Ko",
+      "type": "alumni",
+      "momofuku_role": "Wine Director, Momofuku Ko (joined ~2014)",
+      "accolades": ["Michelin Guide Sommelier Award"],
+      "connections": [
+        { "to": "ko", "type": "worked_at", "role": "Wine Director" },
+        { "to": "claud", "type": "opened_own", "role": "Co-owner & Wine Director" },
+        { "to": "penny", "type": "opened_own", "role": "Co-owner" }
+      ],
+      "current_ventures": [
+        {
+          "id": "claud",
+          "name": "Claud",
+          "city": "New York",
+          "neighborhood": "East Village",
+          "address": "East 10th Street",
+          "opened": "2022-07",
+          "cuisine": "French-inspired bistro / wine bar",
+          "co_owner": "joshua_pinsky",
+          "concept": "Parisian wine bar meets Italian cafe meets London pub",
+          "status": "active",
+          "accolades": ["World's 50 Best Discovery"],
+          "notes": "Burgundy-centric wine list. Casual neighborhood energy."
+        },
+        {
+          "id": "penny",
+          "name": "Penny",
+          "city": "New York",
+          "neighborhood": "East Village (upstairs from Claud)",
+          "opened": "2024",
+          "cuisine": "Seafood & raw bar",
+          "co_owner": "joshua_pinsky",
+          "status": "active",
+          "accolades": ["North America's 50 Best Restaurants 2025"],
+          "notes": "Modern ice-box platter concept. Raw and cooked fish."
+        }
+      ]
+    },
+    {
+      "id": "joshua_pinsky",
+      "name": "Joshua Pinsky",
+      "role": "Former Chef de Cuisine, Momofuku Ko",
+      "type": "alumni",
+      "momofuku_role": "Chef de Cuisine, Momofuku Ko (2012-2020, ~10 years across global projects)",
+      "connections": [
+        { "to": "ko", "type": "worked_at", "role": "Sous Chef then Chef de Cuisine", "years": "2012-2020" },
+        { "to": "claud", "type": "opened_own", "role": "Chef & Co-owner" },
+        { "to": "penny", "type": "opened_own", "role": "Chef & Co-owner" }
+      ],
+      "notes": "Met Chase Sinzer at Ko in 2014. Left Momofuku early 2020. Claud opened 2022, Penny 2024."
+    },
+    {
+      "id": "nikita_malhotra",
+      "name": "Nikita Malhotra",
+      "role": "Former Beverage Director, Momofuku Ko",
+      "type": "alumni",
+      "momofuku_role": "Beverage Director, Momofuku Ko",
+      "accolades": ["Michelin Guide Sommelier of the Year, New York 2022", "Star Wine List Grand Prix NYC 2023"],
+      "connections": [
+        { "to": "ko", "type": "worked_at", "role": "Beverage Director" },
+        { "to": "smithereens", "type": "opened_own", "role": "Co-owner & Beverage Director" }
+      ],
+      "current_ventures": [
+        {
+          "id": "smithereens",
+          "name": "Smithereens",
+          "city": "New York",
+          "neighborhood": "East Village",
+          "address": "414 E 9th Street",
+          "opened": "2024-11-01",
+          "cuisine": "New England-style seafood",
+          "co_owner": "nick_tamburo",
+          "status": "active",
+          "notes": "Named after 1982 Susan Seidelman film. Basement space. First ownership stake for both Malhotra and Tamburo."
+        }
+      ],
+      "correction": "Your brief listed Nikita Malhotra as opening Penny -- that is INCORRECT. Penny was opened by Chase Sinzer and Joshua Pinsky. Malhotra opened Smithereens with Nick Tamburo."
+    },
+    {
+      "id": "sean_gray",
+      "name": "Sean Gray",
+      "role": "Former Executive Chef, Momofuku Ko",
+      "type": "alumni",
+      "momofuku_role": "Executive Chef, Momofuku Ko (~15 years, succeeded Peter Serpico)",
+      "accolades": ["2 Michelin Stars (at Ko)"],
+      "connections": [
+        { "to": "ko", "type": "worked_at", "role": "Executive Chef", "years": "~2008-2023" },
+        { "to": "sergeantsville_inn", "type": "opened_own", "role": "Chef" }
+      ],
+      "current_ventures": [
+        {
+          "id": "sergeantsville_inn",
+          "name": "Sergeantsville Inn",
+          "city": "Sergeantsville, NJ",
+          "type": "Country inn / tavern",
+          "opened_under_gray": "2024",
+          "cuisine": "Simple, locally-sourced American",
+          "status": "active",
+          "notes": "300-year-old stone tavern rebuilt after 2015 fire. Gray moved to Sergeantsville in 2016 and commuted to Ko for 5+ years. Focus on grilled vegetables, fried chicken, expertly cooked proteins. NOTE: It's 'Sergeantsville' not 'Sargentsville' -- common misspelling."
+        }
+      ]
+    },
+    {
+      "id": "sam_yoo",
+      "name": "Sam Yoo",
+      "role": "Former Chef, Momofuku Ko",
+      "type": "alumni",
+      "momofuku_role": "Chef at Momofuku Ko",
+      "additional_training": ["Rich Torrisi", "Mario Carbone"],
+      "connections": [
+        { "to": "ko", "type": "worked_at", "role": "Chef" },
+        { "to": "golden_diner", "type": "opened_own", "role": "Chef-Owner" },
+        { "to": "golden_hof", "type": "opened_own", "role": "Chef-Owner" }
+      ],
+      "current_ventures": [
+        {
+          "id": "golden_diner",
+          "name": "Golden Diner",
+          "city": "New York",
+          "neighborhood": "Two Bridges / Chinatown",
+          "opened": "2019-03",
+          "cuisine": "Asian-American diner classics",
+          "status": "active",
+          "notes": "Critical acclaim. Diner format with Korean and Asian influences."
+        },
+        {
+          "id": "golden_hof",
+          "name": "Golden HOF",
+          "city": "New York",
+          "neighborhood": "Midtown (across from Rockefeller Center)",
+          "opened": "2025-02-25",
+          "cuisine": "Korean pub",
+          "status": "active",
+          "notes": "Shares space with NY Kimchi. Newest venture."
+        },
+        {
+          "id": "ny_kimchi",
+          "name": "NY Kimchi",
+          "city": "New York",
+          "neighborhood": "Midtown (across from Rockefeller Center)",
+          "opened": "2025-02-25",
+          "cuisine": "Korean raw bar & steakhouse",
+          "status": "active",
+          "notes": "Shares space with Golden HOF."
+        }
+      ]
+    },
+    {
+      "id": "telly_justice",
+      "name": "Telly Justice",
+      "role": "Chef (worked in Momofuku space lineage)",
+      "type": "alumni_adjacent",
+      "prior_kitchens": ["Le Bernardin", "Contra"],
+      "momofuku_connection": "Took over original Momofuku Noodle Bar space at First Ave & 10th St",
+      "accolades": [
+        "Michelin Young Chef NY 2023",
+        "James Beard Nomination: Best Chef New York 2023",
+        "James Beard Nomination: Emerging Chef 2022"
+      ],
+      "connections": [
+        { "to": "noodle_bar_ev", "type": "same_space", "notes": "HAGS occupies the original Momofuku Noodle Bar location" },
+        { "to": "hags", "type": "opened_own", "role": "Executive Chef & Co-founder" }
+      ],
+      "current_ventures": [
+        {
+          "id": "hags",
+          "name": "HAGS",
+          "city": "New York",
+          "neighborhood": "East Village",
+          "address": "First Avenue & 10th Street (original Noodle Bar space)",
+          "opened": "2022-04",
+          "cuisine": "Queer fine dining / New American",
+          "co_founder": "Camille Lindsley",
+          "status": "active",
+          "accolades": ["Michelin Guide listed"],
+          "notes": "NOT a direct Momofuku alumni venture -- Telly Justice worked at Le Bernardin and Contra, not Momofuku. The connection is spatial: HAGS took over the original Momofuku Noodle Bar location. This is a PHYSICAL SPACE connection, not an employment one."
+        }
+      ],
+      "identity_notes": "Telly Justice is a proud trans woman. HAGS is described as 'by queer people, for all people.'"
+    },
+    {
+      "id": "theo_ouya",
+      "name": "Theo Ouya",
+      "role": "Former Cook, Momofuku Ko",
+      "type": "alumni",
+      "momofuku_role": "Cook at Momofuku Ko",
+      "background": "Born in Nairobi, Kenya. Culinary school in Geneva, Switzerland. Kitchens in Palo Alto before NYC.",
+      "connections": [
+        { "to": "ko", "type": "worked_at", "role": "Cook" },
+        { "to": "bar_contra", "type": "opened_own", "role": "Bar Manager" }
+      ],
+      "current_ventures": [
+        {
+          "id": "bar_contra",
+          "name": "Bar Contra",
+          "city": "New York",
+          "neighborhood": "Lower East Side",
+          "cuisine": "Cocktail bar (revamped from tasting menu restaurant Contra)",
+          "status": "active",
+          "notes": "Not an independent restaurant opened by Ouya -- he is bar manager at Bar Contra, which is a revamp of the existing restaurant Contra. Uses advanced cocktail techniques from Dave Arnold / Existing Conditions. Ouya's true passion shifted from cooking to cocktails after working at Existing Conditions."
+        }
+      ],
+      "correction": "Theo Ouya is bar manager at Bar Contra, not the owner/founder. His role is significant but it's not an 'opened his own spot' story in the same way as others on this list."
+    },
+    {
+      "id": "nick_tamburo",
+      "name": "Nick Tamburo",
+      "role": "Former Chef, Momofuku Ko & Claud",
+      "type": "alumni",
+      "momofuku_role": "Worked under Sean Gray at Momofuku Ko",
+      "additional_training": ["Opening team at Claud"],
+      "connections": [
+        { "to": "ko", "type": "worked_at", "role": "Chef (under Sean Gray)" },
+        { "to": "claud", "type": "worked_at", "role": "Opening team chef" },
+        { "to": "smithereens", "type": "opened_own", "role": "Chef-Owner" }
+      ],
+      "current_ventures": [
+        {
+          "name": "Smithereens",
+          "ref": "smithereens",
+          "notes": "See Nikita Malhotra entry for full details. First ownership stake."
+        }
+      ],
+      "notes": "Credits time at Ko under Sean Gray as most formative experience. Claud taught him about opening an independent restaurant."
+    },
+    {
+      "id": "peter_serpico",
+      "name": "Peter Serpico",
+      "role": "Former Opening Chef de Cuisine, Momofuku Ko",
+      "type": "alumni",
+      "momofuku_role": "Sous chef at Noodle Bar (2006), helped open Ssam Bar, Ko (opening CdC), Ma Peche, Sydney",
+      "connections": [
+        { "to": "noodle_bar_ev", "type": "worked_at", "role": "Sous Chef", "year": 2006 },
+        { "to": "ko", "type": "worked_at", "role": "Opening Chef de Cuisine", "year": 2008 },
+        { "to": "serpico_philly", "type": "opened_own", "role": "Chef-Owner" }
+      ],
+      "current_ventures": [
+        {
+          "id": "serpico_philly",
+          "name": "Serpico",
+          "city": "Philadelphia",
+          "partner": "Stephen Starr",
+          "opened": "2013",
+          "cuisine": "Asian-influenced American",
+          "status": "active",
+          "notes": "[NEEDS VERIFICATION on current status]"
+        }
+      ]
+    },
+    {
+      "id": "tien_ho",
+      "name": "Tien Ho",
+      "role": "Former Executive Chef, Ma Peche",
+      "type": "alumni",
+      "momofuku_role": "Co-owner and Executive Chef, Ma Peche (2010)",
+      "connections": [
+        { "to": "ma_peche", "type": "worked_at", "role": "Executive Chef" },
+        { "to": "montmartre", "type": "opened_own", "role": "Chef" }
+      ],
+      "current_ventures": [
+        {
+          "id": "montmartre",
+          "name": "Montmartre",
+          "city": "New York",
+          "neighborhood": "Lower Manhattan",
+          "cuisine": "French bistro",
+          "opened": "2013",
+          "status": "closed",
+          "notes": "[NEEDS VERIFICATION on closure date and current projects]"
+        }
+      ]
+    },
+    {
+      "id": "paul_carmichael",
+      "name": "Paul Carmichael",
+      "role": "Executive Chef, Momofuku (current)",
+      "type": "leadership",
+      "momofuku_roles": [
+        { "role": "Chef, Ma Peche team", "year": 2010 },
+        { "role": "Executive Chef, Momofuku Seiobo (Sydney)", "years": "2015-2021" },
+        { "role": "Executive Chef, Momofuku (overseeing all restaurants)", "years": "2021-present" }
+      ],
+      "connections": [
+        { "to": "ma_peche", "type": "worked_at", "role": "Chef" },
+        { "to": "seiobo", "type": "worked_at", "role": "Executive Chef" },
+        { "to": "kabawa", "type": "worked_at", "role": "Executive Chef (current)" }
+      ],
+      "background": "Barbadian heritage. CIA graduate. Previously at Wd~50, Aquavit, Asiate.",
+      "notes": "Still within Momofuku -- not an alumni departure. Oversees Kabawa and Bar Kabawa."
+    },
+    {
+      "id": "lina_goujjane",
+      "name": "Lina Goujjane",
+      "role": "Former Staff, Momofuku Group",
+      "type": "alumni",
+      "momofuku_role": "Worked at Momofuku Group [NEEDS VERIFICATION on specific role]",
+      "additional_experience": ["Sushi Noz"],
+      "connections": [
+        { "to": "momofuku_group", "type": "worked_at" },
+        { "to": "kiko", "type": "opened_own", "role": "Co-owner & Sommelier" }
+      ],
+      "current_ventures": [
+        {
+          "id": "kiko",
+          "name": "Kiko",
+          "city": "New York",
+          "neighborhood": "Hudson Square",
+          "opened": "2024-11",
+          "cuisine": "American with Asian influences",
+          "seats": 75,
+          "co_owner": "Alex Chang (husband, chef)",
+          "status": "active",
+          "notes": "Lina's family owned One if by Land, Two if by Sea (West Village). Born in Paris, raised in NYC."
+        }
+      ]
+    },
+    {
+      "id": "eunjo_park",
+      "name": "Eunjo Park",
+      "role": "Former Executive Chef, Momofuku Kawi",
+      "type": "alumni",
+      "momofuku_role": "Executive Chef, Kawi (Hudson Yards)",
+      "connections": [
+        { "to": "kawi", "type": "worked_at", "role": "Executive Chef" }
+      ],
+      "notes": "[NEEDS VERIFICATION on current projects after Kawi closure]"
+    }
+  ],
+
+  "family_connections": [
+    {
+      "id": "zabar_dynasty",
+      "name": "Zabar Family",
+      "type": "family_tree",
+      "members": [
+        { "name": "Louis Zabar", "role": "Founder, Zabar's (1934)", "generation": 1 },
+        { "name": "Lillian Zabar", "role": "Co-founder, Zabar's", "generation": 1 },
+        { "name": "Stanley Zabar", "role": "VP & Co-owner, Zabar's", "generation": 2, "relationship_to_marguerite": "Grandfather" },
+        { "name": "Marguerite Zabar Mariscal", "role": "CEO, Momofuku", "generation": 4, "relationship_to_founders": "Great-granddaughter" }
+      ],
+      "business": {
+        "name": "Zabar's",
+        "type": "Gourmet grocery store",
+        "address": "2245 Broadway (80th St), Upper West Side, Manhattan",
+        "founded": 1934,
+        "status": "active",
+        "notes": "Iconic NYC institution. No direct business relationship with Momofuku, but the family connection bridges two of NYC's most prominent food dynasties."
+      }
+    }
+  ],
+
+  "visualization_edges": [
+    { "from": "david_chang", "to": "momofuku_group", "type": "worked_at", "label": "Founded 2004" },
+    { "from": "david_chang", "to": "majordomo_media", "type": "opened_own", "label": "Co-founded 2018" },
+    { "from": "david_chang", "to": "milk_bar", "type": "business_partner", "label": "Ongoing partner" },
+    { "from": "marguerite_zabar_mariscal", "to": "momofuku_group", "type": "worked_at", "label": "CEO since 2019" },
+    { "from": "marguerite_zabar_mariscal", "to": "momofuku_goods", "type": "business_partner", "label": "Co-founder & Board" },
+    { "from": "marguerite_zabar_mariscal", "to": "zabar_dynasty", "type": "family_connection", "label": "Great-granddaughter of founders" },
+    { "from": "paddy_spence", "to": "momofuku_goods", "type": "worked_at", "label": "CEO since Feb 2025" },
+    { "from": "christina_tosi", "to": "ko", "type": "worked_at", "label": "Pastry Chef" },
+    { "from": "christina_tosi", "to": "milk_bar", "type": "opened_own", "label": "Founded 2008" },
+    { "from": "sue_chan", "to": "momofuku_group", "type": "worked_at", "label": "First Brand Director" },
+    { "from": "sue_chan", "to": "care_of_chan", "type": "opened_own", "label": "Founded 2016" },
+    { "from": "peter_serpico", "to": "ko", "type": "worked_at", "label": "Opening CdC 2008" },
+    { "from": "peter_serpico", "to": "serpico_philly", "type": "opened_own", "label": "Opened 2013" },
+    { "from": "sean_gray", "to": "ko", "type": "worked_at", "label": "Exec Chef ~15 years" },
+    { "from": "sean_gray", "to": "sergeantsville_inn", "type": "opened_own", "label": "Chef 2024" },
+    { "from": "chase_sinzer", "to": "ko", "type": "worked_at", "label": "Wine Director" },
+    { "from": "chase_sinzer", "to": "claud", "type": "opened_own", "label": "Co-owner 2022" },
+    { "from": "chase_sinzer", "to": "penny", "type": "opened_own", "label": "Co-owner 2024" },
+    { "from": "joshua_pinsky", "to": "ko", "type": "worked_at", "label": "CdC 2012-2020" },
+    { "from": "joshua_pinsky", "to": "claud", "type": "opened_own", "label": "Chef-Owner 2022" },
+    { "from": "joshua_pinsky", "to": "penny", "type": "opened_own", "label": "Chef-Owner 2024" },
+    { "from": "nikita_malhotra", "to": "ko", "type": "worked_at", "label": "Beverage Director" },
+    { "from": "nikita_malhotra", "to": "smithereens", "type": "opened_own", "label": "Co-owner 2024" },
+    { "from": "nick_tamburo", "to": "ko", "type": "worked_at", "label": "Chef (under Gray)" },
+    { "from": "nick_tamburo", "to": "claud", "type": "worked_at", "label": "Opening team" },
+    { "from": "nick_tamburo", "to": "smithereens", "type": "opened_own", "label": "Chef-Owner 2024" },
+    { "from": "sam_yoo", "to": "ko", "type": "worked_at", "label": "Chef" },
+    { "from": "sam_yoo", "to": "golden_diner", "type": "opened_own", "label": "Chef-Owner 2019" },
+    { "from": "sam_yoo", "to": "golden_hof", "type": "opened_own", "label": "Chef-Owner 2025" },
+    { "from": "theo_ouya", "to": "ko", "type": "worked_at", "label": "Cook" },
+    { "from": "theo_ouya", "to": "bar_contra", "type": "opened_own", "label": "Bar Manager" },
+    { "from": "telly_justice", "to": "noodle_bar_ev", "type": "same_space", "label": "Took over original space 2022" },
+    { "from": "tien_ho", "to": "ma_peche", "type": "worked_at", "label": "Exec Chef" },
+    { "from": "tien_ho", "to": "montmartre", "type": "opened_own", "label": "Chef 2013" },
+    { "from": "paul_carmichael", "to": "seiobo", "type": "worked_at", "label": "Exec Chef 2015-2021" },
+    { "from": "paul_carmichael", "to": "kabawa", "type": "worked_at", "label": "Exec Chef (current)" },
+    { "from": "anoop_pillarisetti", "to": "momofuku_group", "type": "worked_at", "label": "VP of Technology" },
+    { "from": "anoop_pillarisetti", "to": "strange_delight", "type": "opened_own", "label": "Co-owner 2024" },
+    { "from": "lina_goujjane", "to": "momofuku_group", "type": "worked_at", "label": "Staff" },
+    { "from": "lina_goujjane", "to": "kiko", "type": "opened_own", "label": "Co-owner 2024" },
+    { "from": "sean_gray", "to": "nick_tamburo", "type": "mentorship", "label": "Mentored at Ko" },
+    { "from": "momofuku_group", "to": "momofuku_goods", "type": "spinoff", "label": "CPG arm" },
+    { "from": "momofuku_group", "to": "milk_bar", "type": "spinoff", "label": "Spun off ~2012" }
+  ],
+
+  "timeline_events": [
+    { "year": 2004, "event": "Momofuku Noodle Bar opens in East Village", "category": "opening" },
+    { "year": 2006, "event": "Ssam Bar opens", "category": "opening" },
+    { "year": 2008, "month": 3, "event": "Momofuku Ko opens (12 seats, tasting menu)", "category": "opening" },
+    { "year": 2008, "month": 11, "event": "Milk Bar opens next to Ssam Bar", "category": "opening" },
+    { "year": 2010, "event": "Ma Peche opens in Chambers Hotel", "category": "opening" },
+    { "year": 2011, "event": "Seiobo opens in Sydney (first international)", "category": "opening" },
+    { "year": 2012, "event": "Momofuku Toronto opens; Milk Bar drops 'Momofuku' from name", "category": "milestone" },
+    { "year": 2013, "event": "Peter Serpico opens Serpico in Philadelphia; Tien Ho opens Montmartre", "category": "alumni_launch" },
+    { "year": 2015, "month": 6, "event": "Fuku chicken sandwich shop opens", "category": "opening" },
+    { "year": 2015, "event": "Momofuku CCDC opens in Washington DC", "category": "opening" },
+    { "year": 2016, "month": 1, "event": "Nishi opens in Chelsea; Sue Chan founds Care of Chan", "category": "opening" },
+    { "year": 2018, "month": 1, "event": "Majordomo opens in LA; Ma Peche closes; Majordomo Media launches", "category": "milestone" },
+    { "year": 2019, "event": "Marguerite Zabar Mariscal becomes first CEO; Kawi opens at Hudson Yards; Sam Yoo opens Golden Diner", "category": "milestone" },
+    { "year": 2020, "event": "COVID closures: Nishi, CCDC permanently close; multiple Fuku locations shutter", "category": "closing" },
+    { "year": 2021, "event": "Seiobo closes in Sydney; Kawi closes at Hudson Yards", "category": "closing" },
+    { "year": 2022, "event": "Toronto complex closes; HAGS opens in original Noodle Bar space; Claud opens (Sinzer + Pinsky); Majordomo Meat & Fish and Moon Palace close in Vegas", "category": "milestone" },
+    { "year": 2023, "event": "Ssam Bar closes Sept 30; Ko closes Nov 4; Momofuku Goods hits $50M revenue", "category": "milestone" },
+    { "year": 2024, "event": "Penny opens (Sinzer + Pinsky); Smithereens opens (Tamburo + Malhotra); Kabawa + Bar Kabawa open (Carmichael); Strange Delight opens (Pillarisetti); Kiko opens (Goujjane); Sergeantsville Inn under Sean Gray", "category": "alumni_wave" },
+    { "year": 2025, "month": 2, "event": "Paddy Spence named CEO of Momofuku Goods; Sam Yoo opens Golden HOF + NY Kimchi; Momofuku Goods hits $67M revenue", "category": "milestone" }
+  ],
+
+  "data_quality_notes": {
+    "high_confidence": [
+      "Ko opening (March 2008) and closing (November 4, 2023) dates",
+      "Ssam Bar closing date (September 30, 2023)",
+      "Marguerite Zabar Mariscal as CEO since 2019 and Zabar family lineage",
+      "Paddy Spence appointed Momofuku Goods CEO February 26, 2025",
+      "Claud opened July 2022 by Chase Sinzer and Joshua Pinsky",
+      "Smithereens opened November 1, 2024 by Nick Tamburo and Nikita Malhotra",
+      "Golden Diner opened March 2019 by Sam Yoo",
+      "Sean Gray at Sergeantsville Inn",
+      "HAGS opened April 2022 in original Noodle Bar space",
+      "Milk Bar founded November 15, 2008; dropped Momofuku name by 2012",
+      "Momofuku Goods revenue: $67M in 2024"
+    ],
+    "needs_verification": [
+      "Noodle Bar Uptown exact opening date (listed as 2017)",
+      "Majordomo LA exact opening month",
+      "Kabawa and Bar Kabawa exact opening dates (listed as 2024)",
+      "Bang Bar NYC status and opening date",
+      "Momofuku Las Vegas current status and exact location",
+      "Majordomo Meat & Fish opening date (listed as 2021)",
+      "Peter Serpico restaurant current status in Philadelphia",
+      "Tien Ho / Montmartre current status",
+      "Eunjo Park post-Kawi projects",
+      "Lina Goujjane specific role at Momofuku Group",
+      "Theo Ouya ownership stake vs. employee at Bar Contra",
+      "Complete list of all Fuku locations and their individual opening/closing dates"
+    ],
+    "corrections_from_brief": [
+      "Nikita Malhotra did NOT open Penny -- she opened Smithereens with Nick Tamburo. Penny was opened by Chase Sinzer and Joshua Pinsky (the Claud team).",
+      "Telly Justice did NOT work at Momofuku -- she worked at Le Bernardin and Contra. HAGS simply occupies the former Momofuku Noodle Bar space. The connection is spatial, not employment.",
+      "Theo Ouya is bar manager at Bar Contra, not the owner. Bar Contra is a revamp of the existing restaurant Contra.",
+      "The restaurant name is 'Sergeantsville Inn' not 'Sargentsville Inn'.",
+      "There is no restaurant called 'Moonburger' -- Moon Palace was David Chang's burger concept in Las Vegas (closed 2022).",
+      "Anoop Pillarisetti's title at Momofuku was VP of Technology, not a traditional 'leadership' role in the chef/restaurant sense.",
+      "Paddy Spence leads Momofuku Goods specifically, not the restaurant group."
+    ]
+  }
+}
