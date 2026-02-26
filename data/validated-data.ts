@@ -1,41 +1,17 @@
-import { FamilyDataSchema } from "./schema";
-import type { FamilyData, Person, Restaurant, Group } from "./schema";
+import type { FamilyData, Person, Restaurant, Group, Relationship } from "./types";
 import peopleJson from "./people.json";
 import restaurantsJson from "./restaurants.json";
 import groupsJson from "./groups.json";
 import relationshipsJson from "./relationships.json";
 
-const raw = {
-  people: peopleJson,
-  restaurants: restaurantsJson,
-  groups: groupsJson,
-  relationships: relationshipsJson,
+// Data is validated at build time via `npm run validate` (prebuild step).
+// No runtime validation needed — just type the static JSON imports.
+export const data: FamilyData = {
+  people: peopleJson as Person[],
+  restaurants: restaurantsJson as Restaurant[],
+  groups: groupsJson as Group[],
+  relationships: relationshipsJson as Relationship[],
 };
-
-const result = FamilyDataSchema.safeParse(raw);
-if (!result.success) {
-  throw new Error(
-    `Data validation failed:\n${JSON.stringify(result.error.format(), null, 2)}`
-  );
-}
-
-// Referential integrity check
-const allIds = new Set([
-  ...result.data.people.map((p) => p.id),
-  ...result.data.restaurants.map((r) => r.id),
-  ...result.data.groups.map((g) => g.id),
-]);
-
-const broken = result.data.relationships.filter(
-  (r) => !allIds.has(r.source) || !allIds.has(r.target)
-);
-if (broken.length) {
-  throw new Error(
-    `Broken references: ${broken.map((e) => `${e.source} → ${e.target}`).join(", ")}`
-  );
-}
-
-export const data: FamilyData = result.data;
 
 export type NodeKind = "person" | "restaurant" | "group";
 

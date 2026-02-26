@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback, useEffect } from "react";
+import { useState, useRef, useMemo, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { buildElements } from "@/lib/graph-utils";
 import { buildNodeLookup } from "@/data/validated-data";
@@ -36,6 +36,7 @@ export default function GraphPage() {
     return params.get("node");
   }, []);
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
+  const selectedNodeRef = useRef<GraphNode | null>(null);
   const [layoutDone, setLayoutDone] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<GraphNode[]>([]);
@@ -69,6 +70,7 @@ export default function GraphPage() {
 
       if (!id) {
         setSelectedNode(null);
+        selectedNodeRef.current = null;
         // Update URL
         window.history.replaceState(null, "", "/");
         return;
@@ -89,7 +91,9 @@ export default function GraphPage() {
         easing: "ease-out-cubic" as cytoscape.Css.TransitionTimingFunction,
       });
 
-      setSelectedNode(nodeLookup.get(id) ?? null);
+      const node = nodeLookup.get(id) ?? null;
+      setSelectedNode(node);
+      selectedNodeRef.current = node;
       setSearchQuery("");
       setSearchResults([]);
 
@@ -120,7 +124,7 @@ export default function GraphPage() {
       });
 
       cy.on("mouseout", "node", () => {
-        if (!selectedNode) {
+        if (!selectedNodeRef.current) {
           cy.elements().removeClass("hover dimmed highlighted");
         }
       });
@@ -130,7 +134,7 @@ export default function GraphPage() {
         setTimeout(() => selectNode(initialNodeId), 1000);
       }
     },
-    [selectNode, initialNodeId, nodeLookup, selectedNode]
+    [selectNode, initialNodeId, nodeLookup]
   );
 
   return (

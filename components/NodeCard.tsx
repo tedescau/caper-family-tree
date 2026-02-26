@@ -1,7 +1,7 @@
 "use client";
 
 import type { GraphNode } from "@/data/validated-data";
-import type { Person, Restaurant, Group } from "@/data/schema";
+import type { Person, Restaurant, Group } from "@/data/types";
 import { data } from "@/data/validated-data";
 
 interface NodeCardProps {
