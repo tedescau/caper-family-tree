@@ -1,0 +1,37 @@
+[
+  {
+    "id": "momofuku",
+    "name": "Momofuku",
+    "type": "restaurant_group",
+    "founded": 2004,
+    "description": "The empire David Chang built, now led by CEO Marguerite Zabar Mariscal."
+  },
+  {
+    "id": "momofuku-goods",
+    "name": "Momofuku Goods",
+    "type": "cpg",
+    "founded": 2020,
+    "description": "CPG arm — Chili Crunch, sauces, noodles. $67M revenue in 2024, 11,000 retail locations."
+  },
+  {
+    "id": "milk-bar-group",
+    "name": "Milk Bar",
+    "type": "spinoff",
+    "founded": 2008,
+    "description": "Christina Tosi's bakery empire. Started inside Momofuku, now fully independent."
+  },
+  {
+    "id": "majordomo-media",
+    "name": "Majordomo Media",
+    "type": "media",
+    "founded": 2018,
+    "description": "David Chang's media company — Ugly Delicious, The Dave Chang Show, Dinner Time Live."
+  },
+  {
+    "id": "zabar-family",
+    "name": "Zabar's",
+    "type": "family",
+    "founded": 1934,
+    "description": "Iconic UWS gourmet grocery. Marguerite Zabar Mariscal is the great-granddaughter of founders Louis and Lillian Zabar."
+  }
+]

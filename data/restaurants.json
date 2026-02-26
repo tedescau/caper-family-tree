@@ -1,0 +1,205 @@
+[
+  {
+    "id": "noodle-bar",
+    "name": "Momofuku Noodle Bar",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2004,
+    "status": "active",
+    "group": "momofuku"
+  },
+  {
+    "id": "ssam-bar",
+    "name": "Momofuku Ssam Bar",
+    "city": "New York",
+    "neighborhood": "South Street Seaport",
+    "opened": 2006,
+    "closed": 2023,
+    "status": "closed",
+    "group": "momofuku"
+  },
+  {
+    "id": "ko",
+    "name": "Momofuku Ko",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2008,
+    "closed": 2023,
+    "status": "closed",
+    "group": "momofuku"
+  },
+  {
+    "id": "ma-peche",
+    "name": "Momofuku Ma Peche",
+    "city": "New York",
+    "neighborhood": "Midtown",
+    "opened": 2010,
+    "closed": 2018,
+    "status": "closed",
+    "group": "momofuku"
+  },
+  {
+    "id": "seiobo",
+    "name": "Momofuku Seiobo",
+    "city": "Sydney",
+    "neighborhood": "The Star",
+    "opened": 2011,
+    "closed": 2021,
+    "status": "closed",
+    "group": "momofuku"
+  },
+  {
+    "id": "majordomo-la",
+    "name": "Majordomo",
+    "city": "Los Angeles",
+    "neighborhood": "Chinatown",
+    "opened": 2018,
+    "status": "active",
+    "group": "momofuku"
+  },
+  {
+    "id": "kabawa",
+    "name": "Kabawa",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2024,
+    "status": "active",
+    "group": "momofuku"
+  },
+  {
+    "id": "bar-kabawa",
+    "name": "Bar Kabawa",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2024,
+    "status": "active",
+    "group": "momofuku"
+  },
+  {
+    "id": "milk-bar",
+    "name": "Milk Bar",
+    "city": "New York",
+    "neighborhood": "Multiple locations",
+    "opened": 2008,
+    "status": "active",
+    "group": "milk-bar-group"
+  },
+  {
+    "id": "claud",
+    "name": "Claud",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2022,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "penny",
+    "name": "Penny",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2024,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "smithereens",
+    "name": "Smithereens",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2024,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "sergeantsville-inn",
+    "name": "Sergeantsville Inn",
+    "city": "Sergeantsville, NJ",
+    "neighborhood": "",
+    "opened": 2024,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "golden-diner",
+    "name": "Golden Diner",
+    "city": "New York",
+    "neighborhood": "Two Bridges",
+    "opened": 2019,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "golden-hof",
+    "name": "Golden HOF",
+    "city": "New York",
+    "neighborhood": "Midtown",
+    "opened": 2025,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "hags",
+    "name": "HAGS",
+    "city": "New York",
+    "neighborhood": "East Village",
+    "opened": 2022,
+    "status": "active",
+    "group": "adjacent"
+  },
+  {
+    "id": "bar-contra",
+    "name": "Bar Contra",
+    "city": "New York",
+    "neighborhood": "Lower East Side",
+    "opened": 2023,
+    "status": "active",
+    "group": "adjacent"
+  },
+  {
+    "id": "serpico-philly",
+    "name": "Serpico",
+    "city": "Philadelphia",
+    "neighborhood": "South Street",
+    "opened": 2013,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "strange-delight",
+    "name": "Strange Delight",
+    "city": "New York",
+    "neighborhood": "Fort Greene, Brooklyn",
+    "opened": 2024,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "kiko",
+    "name": "Kiko",
+    "city": "New York",
+    "neighborhood": "Hudson Square",
+    "opened": 2024,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "care-of-chan",
+    "name": "Care of Chan",
+    "city": "New York",
+    "neighborhood": "",
+    "opened": 2016,
+    "status": "active",
+    "group": "alumni"
+  },
+  {
+    "id": "montmartre",
+    "name": "Montmartre",
+    "city": "New York",
+    "neighborhood": "Lower Manhattan",
+    "opened": 2013,
+    "closed": 2015,
+    "status": "closed",
+    "group": "alumni"
+  }
+]

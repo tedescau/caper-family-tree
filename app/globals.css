@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Cytoscape container needs explicit dimensions */
+.graph-container {
+  width: 100%;
+  height: calc(100vh - 56px - 200px);
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .graph-container {
+    height: calc(100vh - 56px - 160px);
+    min-height: 300px;
+  }
+}
+
+/* Smooth fade-in for graph */
+.graph-fade-in {
+  animation: fadeIn 600ms ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile card panel */
+@media (max-width: 768px) {
+  .node-card-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 50;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .node-card-panel > div {
+    width: 100% !important;
+    border-radius: 12px 12px 0 0;
+  }
+}

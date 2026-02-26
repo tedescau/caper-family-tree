@@ -1,0 +1,146 @@
+[
+  {
+    "id": "david-chang",
+    "name": "David Chang",
+    "title": "Founder & Creative Guide",
+    "bio": "Founded Momofuku in 2004 with a small ramen shop in the East Village. Now focused on media (Ugly Delicious, The Dave Chang Show) and creative direction from LA.",
+    "tags": ["founder", "media"],
+    "active_since": 2004
+  },
+  {
+    "id": "marguerite-zabar-mariscal",
+    "name": "Marguerite Zabar Mariscal",
+    "title": "CEO, Momofuku",
+    "bio": "Great-granddaughter of Zabar's founders. Started as a press intern in 2011, became Momofuku's first-ever CEO in 2019 at age 26. Transformed it into a $100M+ diversified food business.",
+    "tags": ["leadership"],
+    "active_since": 2011
+  },
+  {
+    "id": "paddy-spence",
+    "name": "Paddy Spence",
+    "title": "CEO, Momofuku Goods",
+    "bio": "Former CEO of Zevia. Led Momofuku Goods through rapid retail expansion to 11,000 locations and $67M in 2024 revenue.",
+    "tags": ["leadership", "cpg"],
+    "active_since": 2025
+  },
+  {
+    "id": "christina-tosi",
+    "name": "Christina Tosi",
+    "title": "Founder, Milk Bar",
+    "bio": "Debuted cereal milk panna cotta on Ko's first tasting menu. Founded Milk Bar in 2008, dropped 'Momofuku' by 2012. MasterChef Junior judge.",
+    "tags": ["chef", "alumni", "founder"],
+    "active_since": 2006
+  },
+  {
+    "id": "peter-serpico",
+    "name": "Peter Serpico",
+    "title": "Chef-Owner, Serpico (Philadelphia)",
+    "bio": "Opening chef de cuisine at Ko in 2008. Previously sous chef at Noodle Bar. Opened his eponymous restaurant in Philadelphia with Stephen Starr in 2013.",
+    "tags": ["chef", "alumni"],
+    "active_since": 2006
+  },
+  {
+    "id": "sean-gray",
+    "name": "Sean Gray",
+    "title": "Chef, Sergeantsville Inn",
+    "bio": "Executive chef at Ko for nearly 15 years, earning 2 Michelin stars. Moved to rural New Jersey and now runs the 300-year-old Sergeantsville Inn.",
+    "tags": ["chef", "alumni"],
+    "active_since": 2008
+  },
+  {
+    "id": "paul-carmichael",
+    "name": "Paul Carmichael",
+    "title": "Executive Chef, Momofuku",
+    "bio": "Barbadian heritage. Led Seiobo in Sydney, now oversees all Momofuku restaurants including Kabawa. CIA graduate.",
+    "tags": ["chef", "leadership"],
+    "active_since": 2010
+  },
+  {
+    "id": "chase-sinzer",
+    "name": "Chase Sinzer",
+    "title": "Wine Director & Co-owner, Claud / Penny",
+    "bio": "Wine director at Ko. Michelin Sommelier Award winner. Co-owns Claud (2022) and Penny (2024) in the East Village with Joshua Pinsky.",
+    "tags": ["sommelier", "alumni", "owner"],
+    "active_since": 2014
+  },
+  {
+    "id": "joshua-pinsky",
+    "name": "Joshua Pinsky",
+    "title": "Chef & Co-owner, Claud / Penny",
+    "bio": "Chef de cuisine at Ko from 2012-2020. Met Chase Sinzer at Ko in 2014. Together they opened Claud and Penny in the East Village.",
+    "tags": ["chef", "alumni", "owner"],
+    "active_since": 2012
+  },
+  {
+    "id": "nikita-malhotra",
+    "name": "Nikita Malhotra",
+    "title": "Sommelier & Co-owner, Smithereens",
+    "bio": "Beverage director at Ko. Michelin Sommelier of the Year NYC 2022. Opened Smithereens in November 2024 with Nick Tamburo.",
+    "tags": ["sommelier", "alumni", "owner"],
+    "active_since": 2018
+  },
+  {
+    "id": "nick-tamburo",
+    "name": "Nick Tamburo",
+    "title": "Chef-Owner, Smithereens",
+    "bio": "Worked under Sean Gray at Ko, then joined the opening team at Claud. Opened Smithereens with Nikita Malhotra in 2024 — his first ownership stake.",
+    "tags": ["chef", "alumni", "owner"],
+    "active_since": 2016
+  },
+  {
+    "id": "sam-yoo",
+    "name": "Sam Yoo",
+    "title": "Chef-Owner, Golden Diner / Golden HOF",
+    "bio": "Ko alum who also trained with Torrisi and Carbone. Opened Golden Diner (2019), then Golden HOF and NY Kimchi in Midtown (2025).",
+    "tags": ["chef", "alumni", "owner"],
+    "active_since": 2015
+  },
+  {
+    "id": "telly-justice",
+    "name": "Telly Justice",
+    "title": "Chef & Co-founder, HAGS",
+    "bio": "Worked at Le Bernardin and Contra, not Momofuku. HAGS took over the original Noodle Bar space on First Avenue in 2022. Michelin Young Chef NYC 2023.",
+    "tags": ["chef", "adjacent"],
+    "active_since": 2022
+  },
+  {
+    "id": "theo-ouya",
+    "name": "Theo Ouya",
+    "title": "Bar Manager, Bar Contra",
+    "bio": "Born in Nairobi, trained in Geneva. Cooked at Ko before shifting to cocktails at Existing Conditions. Now bar manager at Bar Contra on the Lower East Side.",
+    "tags": ["bartender", "alumni"],
+    "active_since": 2017
+  },
+  {
+    "id": "sue-chan",
+    "name": "Sue Chan",
+    "title": "Founder, Care of Chan",
+    "bio": "Momofuku's first brand director — oversaw PR, marketing, and partnerships across 10 establishments. Founded Care of Chan, a hospitality experiential agency, in 2016.",
+    "tags": ["marketing", "alumni", "founder"],
+    "active_since": 2008
+  },
+  {
+    "id": "anoop-pillarisetti",
+    "name": "Anoop Pillarisetti",
+    "title": "Co-owner, Strange Delight",
+    "bio": "Former VP of Technology at Momofuku. Louisiana upbringing. Opened Strange Delight in Fort Greene, Brooklyn in 2024 — New Orleans seafood and cocktails.",
+    "tags": ["tech", "alumni", "owner"],
+    "active_since": 2015
+  },
+  {
+    "id": "lina-goujjane",
+    "name": "Lina Goujjane",
+    "title": "Co-owner & Sommelier, Kiko",
+    "bio": "Worked at Momofuku Group and Sushi Noz. Family owned One if by Land, Two if by Sea. Born in Paris, raised in NYC. Opened Kiko in Hudson Square in 2024.",
+    "tags": ["sommelier", "alumni", "owner"],
+    "active_since": 2018
+  },
+  {
+    "id": "tien-ho",
+    "name": "Tien Ho",
+    "title": "Former Executive Chef, Ma Peche",
+    "bio": "Co-owner and executive chef at Ma Peche when it opened in 2010. Later opened Montmartre in Lower Manhattan.",
+    "tags": ["chef", "alumni"],
+    "active_since": 2010
+  }
+]

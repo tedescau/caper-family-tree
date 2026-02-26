@@ -1,0 +1,76 @@
+[
+  { "source": "david-chang", "target": "momofuku", "type": "founded", "label": "Founded 2004" },
+  { "source": "david-chang", "target": "majordomo-media", "type": "founded", "label": "Co-founded 2018" },
+  { "source": "david-chang", "target": "milk-bar-group", "type": "family", "label": "Business partner" },
+  { "source": "david-chang", "target": "majordomo-la", "type": "founded", "label": "LA flagship" },
+
+  { "source": "marguerite-zabar-mariscal", "target": "momofuku", "type": "current_staff", "label": "CEO since 2019" },
+  { "source": "marguerite-zabar-mariscal", "target": "momofuku-goods", "type": "founded", "label": "Co-founder & Board" },
+  { "source": "marguerite-zabar-mariscal", "target": "zabar-family", "type": "family", "label": "Great-granddaughter" },
+
+  { "source": "paddy-spence", "target": "momofuku-goods", "type": "current_staff", "label": "CEO since 2025" },
+
+  { "source": "momofuku-goods", "target": "momofuku", "type": "belongs_to", "label": "CPG division" },
+  { "source": "noodle-bar", "target": "momofuku", "type": "belongs_to", "label": "Flagship" },
+  { "source": "ssam-bar", "target": "momofuku", "type": "belongs_to", "label": "" },
+  { "source": "ko", "target": "momofuku", "type": "belongs_to", "label": "Fine dining" },
+  { "source": "ma-peche", "target": "momofuku", "type": "belongs_to", "label": "" },
+  { "source": "seiobo", "target": "momofuku", "type": "belongs_to", "label": "Sydney" },
+  { "source": "majordomo-la", "target": "momofuku", "type": "belongs_to", "label": "LA" },
+  { "source": "kabawa", "target": "momofuku", "type": "belongs_to", "label": "Caribbean" },
+  { "source": "bar-kabawa", "target": "momofuku", "type": "belongs_to", "label": "" },
+  { "source": "milk-bar", "target": "milk-bar-group", "type": "belongs_to", "label": "" },
+
+  { "source": "christina-tosi", "target": "ko", "type": "alumni", "label": "Pastry Chef" },
+  { "source": "christina-tosi", "target": "milk-bar", "type": "founded", "label": "Founded 2008" },
+
+  { "source": "peter-serpico", "target": "noodle-bar", "type": "alumni", "label": "Sous Chef 2006" },
+  { "source": "peter-serpico", "target": "ko", "type": "alumni", "label": "Opening CdC 2008" },
+  { "source": "peter-serpico", "target": "serpico-philly", "type": "opened_new", "label": "Philadelphia 2013" },
+
+  { "source": "sean-gray", "target": "ko", "type": "alumni", "label": "Exec Chef ~15 yrs" },
+  { "source": "sean-gray", "target": "sergeantsville-inn", "type": "opened_new", "label": "Rural NJ 2024" },
+
+  { "source": "paul-carmichael", "target": "ma-peche", "type": "alumni", "label": "Chef" },
+  { "source": "paul-carmichael", "target": "seiobo", "type": "alumni", "label": "Exec Chef 2015-2021" },
+  { "source": "paul-carmichael", "target": "kabawa", "type": "current_staff", "label": "Exec Chef" },
+
+  { "source": "chase-sinzer", "target": "ko", "type": "alumni", "label": "Wine Director" },
+  { "source": "chase-sinzer", "target": "claud", "type": "opened_new", "label": "Co-owner 2022" },
+  { "source": "chase-sinzer", "target": "penny", "type": "opened_new", "label": "Co-owner 2024" },
+
+  { "source": "joshua-pinsky", "target": "ko", "type": "alumni", "label": "CdC 2012-2020" },
+  { "source": "joshua-pinsky", "target": "claud", "type": "opened_new", "label": "Chef-Owner 2022" },
+  { "source": "joshua-pinsky", "target": "penny", "type": "opened_new", "label": "Chef-Owner 2024" },
+
+  { "source": "nikita-malhotra", "target": "ko", "type": "alumni", "label": "Beverage Director" },
+  { "source": "nikita-malhotra", "target": "smithereens", "type": "opened_new", "label": "Co-owner 2024" },
+
+  { "source": "nick-tamburo", "target": "ko", "type": "alumni", "label": "Chef (under Gray)" },
+  { "source": "nick-tamburo", "target": "claud", "type": "alumni", "label": "Opening team" },
+  { "source": "nick-tamburo", "target": "smithereens", "type": "opened_new", "label": "Chef-Owner 2024" },
+
+  { "source": "sam-yoo", "target": "ko", "type": "alumni", "label": "Chef" },
+  { "source": "sam-yoo", "target": "golden-diner", "type": "opened_new", "label": "Chef-Owner 2019" },
+  { "source": "sam-yoo", "target": "golden-hof", "type": "opened_new", "label": "Chef-Owner 2025" },
+
+  { "source": "telly-justice", "target": "noodle-bar", "type": "same_space", "label": "Took over space 2022" },
+  { "source": "telly-justice", "target": "hags", "type": "founded", "label": "Co-founder 2022" },
+
+  { "source": "theo-ouya", "target": "ko", "type": "alumni", "label": "Cook" },
+  { "source": "theo-ouya", "target": "bar-contra", "type": "current_staff", "label": "Bar Manager" },
+
+  { "source": "sue-chan", "target": "momofuku", "type": "alumni", "label": "First Brand Director" },
+  { "source": "sue-chan", "target": "care-of-chan", "type": "opened_new", "label": "Founded 2016" },
+
+  { "source": "anoop-pillarisetti", "target": "momofuku", "type": "alumni", "label": "VP of Technology" },
+  { "source": "anoop-pillarisetti", "target": "strange-delight", "type": "opened_new", "label": "Co-owner 2024" },
+
+  { "source": "lina-goujjane", "target": "momofuku", "type": "alumni", "label": "Staff" },
+  { "source": "lina-goujjane", "target": "kiko", "type": "opened_new", "label": "Co-owner 2024" },
+
+  { "source": "tien-ho", "target": "ma-peche", "type": "alumni", "label": "Exec Chef" },
+  { "source": "tien-ho", "target": "montmartre", "type": "opened_new", "label": "Chef 2013" },
+
+  { "source": "sean-gray", "target": "nick-tamburo", "type": "alumni", "label": "Mentored at Ko" }
+]
