@@ -4,6 +4,7 @@ import { useState, useRef, useMemo, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { buildElements } from "@/lib/graph-utils";
 import { buildNodeLookup } from "@/data/validated-data";
+import bakedPositions from "@/data/positions.json";
 import type { GraphNode } from "@/data/validated-data";
 import NodeCard from "@/components/NodeCard";
 import Legend from "@/components/Legend";
@@ -205,10 +206,11 @@ export default function GraphPage() {
       {/* Graph */}
       <div className="flex-1 relative px-2 md:px-4">
         <div
-          className={`graph-container rounded-sm border border-black/5 bg-[#E2E6DF] ${layoutDone ? "graph-fade-in" : ""}`}
+          className={`graph-container rounded-sm border border-black/5 ${layoutDone ? "graph-fade-in" : ""}`}
         >
           <FamilyTree
             elements={elements}
+            positions={bakedPositions}
             onCyReady={handleCyReady}
             onLayoutDone={() => setLayoutDone(true)}
           />

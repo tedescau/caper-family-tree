@@ -7,8 +7,9 @@ body {
 /* Cytoscape container needs explicit dimensions */
 .graph-container {
   width: 100%;
-  height: calc(100vh - 56px - 200px);
-  min-height: 400px;
+  height: calc(100vh - 80px);
+  min-height: 500px;
+  background: #E8EBE5;
 }
 
 @media (max-width: 768px) {

@@ -2,95 +2,154 @@ import type { StylesheetStyle } from "cytoscape";
 import { colors, edgeColors, fonts } from "./tokens";
 
 export const cytoscapeStylesheet: StylesheetStyle[] = [
-  // Base node
+  // ── Base node ──────────────────────────────────────────────
   {
     selector: "node",
     style: {
+      shape: "round-rectangle",
       label: "data(label)",
       "text-valign": "center",
       "text-halign": "center",
       "font-family": fonts.ui,
       "font-size": "11px",
+      "font-weight": 500,
       color: colors.primary,
       "text-wrap": "wrap",
-      "text-max-width": "90px",
-      "background-color": colors.background,
+      "text-max-width": "110px",
+      "background-color": colors.personBg,
       "border-width": 1.5,
       "border-color": colors.primary,
       "overlay-opacity": 0,
+      width: "label",
+      height: 32,
+      "padding-left": "12px",
+      "padding-right": "12px",
       "transition-property":
         "border-width, border-color, opacity, background-color",
       "transition-duration": 150,
     },
   },
 
-  // Person nodes — circle with initials
+  // ── Person nodes — rectangle with full name ────────────────
   {
     selector: 'node[kind = "person"]',
     style: {
-      shape: "ellipse",
-      width: 56,
-      height: 56,
-      label: "data(initials)",
-      "font-family": fonts.headline,
-      "font-size": "16px",
-      "font-weight": 700,
-      "text-valign": "center",
-      "text-halign": "center",
-    },
-  },
-
-  // Restaurant nodes — round rectangle (pill)
-  {
-    selector: 'node[kind = "restaurant"]',
-    style: {
-      shape: "round-rectangle",
       width: "label",
       height: 32,
-      "padding-left": "12px",
-      "padding-right": "12px",
-      "font-family": fonts.accent,
-      "font-size": "12px",
-      "font-style": "italic",
-    },
-  },
-
-  // Closed restaurants — dashed border
-  {
-    selector: 'node[kind = "restaurant"][status = "closed"]',
-    style: {
-      "border-style": "dashed",
-      opacity: 0.55,
-    },
-  },
-
-  // Group/Org nodes — diamond
-  {
-    selector: 'node[kind = "group"]',
-    style: {
-      shape: "diamond",
-      width: 40,
-      height: 40,
-      "background-color": "transparent",
+      "padding-left": "14px",
+      "padding-right": "14px",
+      label: "data(label)",
       "font-family": fonts.ui,
-      "font-size": "10px",
-      "text-valign": "bottom",
-      "text-margin-y": 8,
+      "font-size": "11px",
+      "font-weight": 500,
+      "background-color": colors.personBg,
+      "border-color": colors.personBorder,
+      "border-width": 1.5,
+      color: colors.primary,
+    },
+  },
+
+  // Founders & leadership — slightly bolder
+  {
+    selector: 'node[kind = "person"][?tags]',
+    style: {} as any, // base — overridden by tag selectors below
+  },
+
+  // ── Momofuku restaurant nodes — dark fill ──────────────────
+  {
+    selector: 'node[kind = "restaurant"][isAlumni = "false"]',
+    style: {
+      width: "label",
+      height: 32,
+      "padding-left": "14px",
+      "padding-right": "14px",
+      "font-family": fonts.accent,
+      "font-size": "11px",
+      "font-style": "italic",
+      "background-color": colors.restaurantBg,
+      "border-width": 0,
+      color: colors.restaurantText,
       label: "data(label)",
     },
   },
 
-  // Base edge
+  // ── Alumni-opened restaurants — white fill, dashed border ──
+  {
+    selector: 'node[kind = "restaurant"][isAlumni = "true"]',
+    style: {
+      width: "label",
+      height: 32,
+      "padding-left": "14px",
+      "padding-right": "14px",
+      "font-family": fonts.accent,
+      "font-size": "11px",
+      "font-style": "italic",
+      "background-color": colors.alumniRestaurantBg,
+      "border-width": 2,
+      "border-style": "dashed" as const,
+      "border-color": colors.alumniRestaurantBorder,
+      color: colors.alumniRestaurantText,
+      label: "data(label)",
+    },
+  },
+
+  // ── Closed restaurants — faded ─────────────────────────────
+  {
+    selector: 'node[kind = "restaurant"][status = "closed"]',
+    style: {
+      "background-color": colors.closedBg,
+      "border-style": "dashed" as const,
+      "border-width": 1,
+      "border-color": colors.closedBorder,
+      opacity: 0.6,
+      color: colors.closedText,
+    },
+  },
+
+  // ── Group/Org nodes — large rectangle, dark fill ───────────
+  {
+    selector: 'node[kind = "group"]',
+    style: {
+      shape: "round-rectangle",
+      width: "label",
+      height: 40,
+      "padding-left": "18px",
+      "padding-right": "18px",
+      "background-color": colors.groupBg,
+      "border-width": 0,
+      "font-family": fonts.ui,
+      "font-size": "12px",
+      "font-weight": 700,
+      "text-transform": "uppercase" as any,
+      color: colors.groupText,
+      label: "data(label)",
+    },
+  },
+
+  // Momofuku group — largest, dominant
+  {
+    selector: 'node[id = "momofuku"]',
+    style: {
+      height: 48,
+      "padding-left": "24px",
+      "padding-right": "24px",
+      "font-size": "14px",
+      "border-width": 2,
+      "border-color": colors.warmTan,
+    },
+  },
+
+  // ── Base edge ──────────────────────────────────────────────
   {
     selector: "edge",
     style: {
-      width: 1,
+      width: 1.2,
       "curve-style": "bezier",
-      opacity: 0.45,
+      opacity: 0.35,
       "target-arrow-shape": "triangle",
-      "target-arrow-color": colors.graphite,
-      "arrow-scale": 0.6,
-      "line-color": colors.graphite,
+      "target-arrow-color": colors.primary,
+      "arrow-scale": 0.5,
+      "line-color": colors.primary,
       label: "",
       "font-size": "9px",
       "font-family": fonts.ui,
@@ -103,7 +162,7 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
     },
   },
 
-  // Relationship-specific edge styles
+  // ── Relationship-specific edges ────────────────────────────
   {
     selector: 'edge[relType = "alumni"]',
     style: {
@@ -111,6 +170,7 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       "target-arrow-color": edgeColors.alumni.color,
       "line-style": "dashed" as const,
       width: edgeColors.alumni.width,
+      opacity: 0.45,
     },
   },
   {
@@ -119,6 +179,7 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       "line-color": edgeColors.founded.color,
       "target-arrow-color": edgeColors.founded.color,
       width: edgeColors.founded.width,
+      opacity: 0.7,
       "target-arrow-shape": "none",
     },
   },
@@ -129,6 +190,7 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       "target-arrow-color": edgeColors.current_staff.color,
       width: edgeColors.current_staff.width,
       "target-arrow-shape": "none",
+      opacity: 0.3,
     },
   },
   {
@@ -138,6 +200,9 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       "target-arrow-color": edgeColors.opened_new.color,
       "line-style": "dashed" as const,
       width: edgeColors.opened_new.width,
+      opacity: 0.6,
+      "target-arrow-shape": "triangle",
+      "arrow-scale": 0.6,
     },
   },
   {
@@ -147,6 +212,8 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       "target-arrow-color": edgeColors.belongs_to.color,
       width: edgeColors.belongs_to.width,
       "target-arrow-shape": "none",
+      opacity: 0.15,
+      "line-style": "dotted" as const,
     },
   },
   {
@@ -156,6 +223,7 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       "target-arrow-color": edgeColors.family.color,
       width: edgeColors.family.width,
       "target-arrow-shape": "none",
+      opacity: 0.5,
     },
   },
   {
@@ -165,43 +233,43 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       "target-arrow-color": edgeColors.same_space.color,
       "line-style": "dotted" as const,
       width: edgeColors.same_space.width,
+      opacity: 0.3,
     },
   },
 
-  // Hover state
+  // ── Interaction states ─────────────────────────────────────
   {
     selector: "node.hover",
     style: {
-      "border-width": 2.5,
+      "border-width": 3,
       "border-color": colors.accent,
+      "underlay-color": colors.accent,
+      "underlay-opacity": 0.08,
+      "underlay-padding": 6,
     },
   },
-
-  // Selected node
   {
     selector: "node.selected",
     style: {
       "border-width": 3,
       "border-color": colors.accent,
-      "background-color": colors.cardBg,
+      "underlay-color": colors.accent,
+      "underlay-opacity": 0.12,
+      "underlay-padding": 8,
     },
   },
-
-  // Dimmed state (everything NOT in neighborhood)
   {
     selector: "node.dimmed",
     style: {
-      opacity: 0.15,
+      opacity: 0.12,
     },
   },
   {
     selector: "edge.dimmed",
     style: {
-      opacity: 0.05,
+      opacity: 0.04,
     },
   },
-
-  // Highlighted edges (in neighborhood)
   {
     selector: "edge.highlighted",
     style: {
@@ -210,8 +278,6 @@ export const cytoscapeStylesheet: StylesheetStyle[] = [
       label: "data(label)",
     },
   },
-
-  // Neighbor nodes
   {
     selector: "node.neighbor",
     style: {

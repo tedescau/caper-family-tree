@@ -3,23 +3,25 @@
 import { useEffect, useRef, useCallback, useState } from "react";
 import CytoscapeComponent from "react-cytoscapejs";
 import cytoscape from "cytoscape";
-import fcose from "cytoscape-fcose";
+import dagre from "cytoscape-dagre";
 import type { ElementDefinition } from "cytoscape";
 import { cytoscapeStylesheet } from "@/lib/styles";
 
-// Register fCoSE layout
+// Register dagre layout
 if (typeof window !== "undefined") {
-  cytoscape.use(fcose);
+  cytoscape.use(dagre);
 }
 
 interface FamilyTreeProps {
   elements: ElementDefinition[];
+  positions?: Record<string, { x: number; y: number }>;
   onCyReady: (cy: cytoscape.Core) => void;
   onLayoutDone?: () => void;
 }
 
 export default function FamilyTree({
   elements,
+  positions,
   onCyReady,
   onLayoutDone,
 }: FamilyTreeProps) {
@@ -39,40 +41,38 @@ export default function FamilyTree({
       cyRef.current = cy;
       onCyReady(cy);
 
-      // Run layout
-      const layout = cy.layout({
-        name: "fcose",
-        quality: "default",
-        animate: true,
-        animationDuration: 800,
-        animationEasing: "ease-out-cubic",
-        nodeRepulsion: () => 6000,
-        idealEdgeLength: () => 100,
-        edgeElasticity: () => 0.45,
-        gravity: 0.3,
-        gravityRange: 3.8,
-        nodeSeparation: 75,
-        // Pin Momofuku group at the top center
-        fixedNodeConstraint: [
-          { nodeId: "momofuku", position: { x: 0, y: -250 } },
-        ],
-        relativePlacementConstraint: [
-          { top: "momofuku", bottom: "ko", gap: 120 },
-          { top: "momofuku", bottom: "noodle-bar", gap: 120 },
-          { top: "momofuku", bottom: "ssam-bar", gap: 120 },
-          { top: "ko", bottom: "chase-sinzer", gap: 100 },
-          { top: "ko", bottom: "sean-gray", gap: 100 },
-          { top: "ko", bottom: "joshua-pinsky", gap: 100 },
-        ],
-      } as cytoscape.LayoutOptions);
+      // Use baked positions if available, otherwise compute with dagre
+      const layoutOptions = positions
+        ? {
+            name: "preset",
+            positions: (node: cytoscape.NodeSingular) => {
+              const pos = positions[node.id()];
+              return pos || { x: 0, y: 0 };
+            },
+            fit: true,
+            padding: 50,
+          }
+        : {
+            name: "dagre",
+            rankDir: "TB",
+            nodeSep: 60,
+            rankSep: 100,
+            edgeSep: 10,
+            fit: true,
+            padding: 50,
+            animate: false,
+          };
+
+      const layout = cy.layout(layoutOptions as cytoscape.LayoutOptions);
 
       layout.on("layoutstop", () => {
+        cy.fit(undefined, 50);
         onLayoutDone?.();
       });
 
       layout.run();
     },
-    [onCyReady, onLayoutDone]
+    [onCyReady, onLayoutDone, positions]
   );
 
   // Force re-render after fonts load
@@ -109,7 +109,6 @@ export default function FamilyTree({
         minZoom={0.3}
         maxZoom={3}
         wheelSensitivity={0.3}
-        textureOnViewport={true}
         boxSelectionEnabled={false}
         autounselectify={true}
       />

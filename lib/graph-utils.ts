@@ -1,21 +1,18 @@
 import type { ElementDefinition } from "cytoscape";
 import { data } from "@/data/validated-data";
 
+/** Groups whose restaurants are "Momofuku properties" (not alumni-opened). */
+const MOMOFUKU_GROUPS = new Set(["momofuku", "milk-bar-group"]);
+
 export function buildElements(): ElementDefinition[] {
   const nodes: ElementDefinition[] = [];
   const edges: ElementDefinition[] = [];
 
   for (const p of data.people) {
-    const initials = p.name
-      .split(" ")
-      .map((w) => w[0])
-      .join("")
-      .slice(0, 2);
     nodes.push({
       data: {
         id: p.id,
         label: p.name,
-        initials,
         kind: "person",
         tags: p.tags,
       },
@@ -23,6 +20,7 @@ export function buildElements(): ElementDefinition[] {
   }
 
   for (const r of data.restaurants) {
+    const isAlumni = !MOMOFUKU_GROUPS.has(r.group);
     nodes.push({
       data: {
         id: r.id,
@@ -30,6 +28,7 @@ export function buildElements(): ElementDefinition[] {
         kind: "restaurant",
         status: r.status,
         group: r.group,
+        isAlumni: isAlumni ? "true" : "false",
       },
     });
   }

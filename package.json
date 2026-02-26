@@ -8,13 +8,15 @@
     "prebuild": "npm run validate",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "bake": "tsx scripts/bake-positions.ts"
   },
   "dependencies": {
     "@types/node": "^25.3.1",
     "@types/react": "^19.2.14",
     "cytoscape": "^3.33.1",
-    "cytoscape-fcose": "^2.2.0",
+    "cytoscape-dagre": "^2.5.0",
+    "dagre": "^0.8.5",
     "next": "^16.1.6",
     "react": "^19.2.4",
     "react-cytoscapejs": "^2.0.0",
@@ -24,6 +26,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.1",
+    "@types/cytoscape": "^3.21.9",
     "autoprefixer": "^10.4.27",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.2.1",
